@@ -1,1 +1,1 @@
-*.pyc
+/binbash/src/bashbin/**/*.pyc
