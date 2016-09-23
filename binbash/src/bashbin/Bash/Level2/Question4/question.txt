@@ -1,0 +1,5 @@
+Congratulations! You have uncovered a clue ‘YELLOW PAGES’. Let's take a look at the yellow pages. Your task is to write a bash script that retrieves all mobile numbers present in yellow pages and convert it as follows ABCDEFGHIJ →  +91-ABC-DEF-GHIJ. Remember that the phone numbers must be valid numbers issued in India. The data in yellow pages can be found in the file ‘file.txt’. Assume that the input file is available as a command line argument.
+        Example:
+            INPUT : 9946789045            
+	    OUTPUT : +91-994-678-9045
+

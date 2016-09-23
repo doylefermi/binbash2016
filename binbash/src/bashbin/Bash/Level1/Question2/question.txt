@@ -1,0 +1,5 @@
+Your task is to write a bash script that echos the count of even numbers present in the range  1 to n. You are required to enter the value of n.
+            Example:
+                INPUT: 10
+                OUTPUT: 5
+

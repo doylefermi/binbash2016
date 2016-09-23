@@ -1,0 +1,18 @@
+3/11/16 1:00 AM - Tantek: what does the datetime stamp represent?
+3/11/16 1:22 AM - KevinMarks: in iRC, when it was said
+4/11/16 1:30 AM - Tantek: is it a point in time *before* they started speaking?
+3/11/16 2:00 AM - Tantek: or *after*?
+5/11/16 2:07 PM - Tantek: or somewhere in the *middle*?
+3/11/16 2:55 PM - KevinMarks: usually it is quantised to seconds
+3/11/16 3:00 PM - KevinMarks: and it is time the msg was received
+3/11/16 3:20 PM - Tantek: but the second they started typing or pressed return?
+6/11/16 4:00 PM - KevinMarks: prssed return i think
+3/11/16 5:00 PM - Tantek: what does the datetime stamp represent?
+3/11/16 5:22 PM - KevinMarks: in iRC, when it was said
+4/11/16 6:00 AM - Tantek: is it a point in time *before* they started speaking?
+3/11/16 7:00 AM - Tantek: or *after*?
+5/11/16 7:07 AM - Tantek: or somewhere in the *middle*?
+3/11/16 7:55 AM - KevinMarks: usually it is quantised to seconds
+3/11/16 8:00 AM - KevinMarks: and it is time the msg was received
+3/11/16 9:00 AM - Tantek: but the second they started typing or pressed return?
+6/11/16 10:00 AM - KevinMarks: prssed return i think

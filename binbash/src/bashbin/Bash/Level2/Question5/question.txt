@@ -1,0 +1,19 @@
+Looks like you have just uncovered a conversation between X and Y. There seems to be a secret algorithm embedded in their conversation. Your task is write a script that prints out the algorithm. It is written such that the message written at 01:00 is Step 1, the one at 02:00 is Step 2 and so on. The conversation can be found in ‘file.txt’. Assume that the input file is entered as a command line argument. Also assume that there can be a maximum of 20 steps.
+        
+	Example:
+            INPUT :
+            2/11/2014, 12:22 PM - John: Hi Stacy
+	    12/11/2014, 12:22 PM - John: :)
+	    13/11/2014, 1:00 AM - John: How are you?
+            13/11/2014, 1:59 AM - John: Are u home?
+	    13/11/2014, 2:00 AM - Stacy: Hi John
+	    13/11/2014, 2:10 AM - Stacy: yeah I am good	
+            13/11/2014, 2:15 AM - Stacy: and home too
+            13/11/2014, 3:00 PM - John: ok
+            16/11/2014, 3:14 PM - Stacy: how are you?
+                
+            OUTPUT :
+            Step 1: How are you?
+            Step 2: Hi John
+            Step 3: ok
+

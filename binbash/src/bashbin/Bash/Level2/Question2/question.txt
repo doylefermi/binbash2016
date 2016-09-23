@@ -1,0 +1,5 @@
+ The recovered data does not make any sense. It seems to be encoded. Your task is write a bash script to decode the data in the file ‘file.txt’. The data appears to be encoded using Atbash cipher. The resulting output must be in lowercase. Assume that the input file is available as a command line argument.
+    Example: 
+        INPUT : AGTCTAE
+        OUTPUT : ztgxgzv
+

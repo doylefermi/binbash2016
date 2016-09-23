@@ -1,0 +1,6 @@
+FROM ubuntu
+MAINTAINER Doyle Fermi <doylefermi@gmail.com>
+RUN echo "root:doylefermi" | chpasswd
+WORKDIR /home
+RUN apt update && \
+	apt install -y curl ping nano

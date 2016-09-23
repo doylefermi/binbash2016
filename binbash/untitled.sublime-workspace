@@ -1,0 +1,612 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tim",
+				"timezone"
+			],
+			[
+				"dir_",
+				"dir_path"
+			],
+			[
+				"dir",
+				"dirname"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"current",
+				"current_user"
+			],
+			[
+				"Q",
+				"Question"
+			],
+			[
+				"j",
+				"j"
+			],
+			[
+				"tas",
+				"task_id"
+			],
+			[
+				"docker",
+				"docker_run"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"container",
+				"container_id"
+			],
+			[
+				"con",
+				"container_id"
+			],
+			[
+				"ans",
+				"answer_path"
+			],
+			[
+				"c",
+				"cmd"
+			],
+			[
+				"cat",
+				"cat_request"
+			],
+			[
+				"top",
+				"top_request"
+			],
+			[
+				"sub",
+				"submit_request"
+			],
+			[
+				"su",
+				"such"
+			],
+			[
+				"ca",
+				"cat_request"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"fil",
+				"file1_qpath"
+			],
+			[
+				"ex",
+				"extra_text"
+			],
+			[
+				"le",
+				"level"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/bashbin/views.py",
+			"settings":
+			{
+				"buffer_size": 9575,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/models.py",
+			"settings":
+			{
+				"buffer_size": 1107,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/tasks.py",
+			"settings":
+			{
+				"buffer_size": 227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/binbash/urls.py",
+			"settings":
+			{
+				"buffer_size": 1227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/templates/home.html",
+			"settings":
+			{
+				"buffer_size": 11,
+				"line_ending": "Unix",
+				"name": "home.html"
+			}
+		},
+		{
+			"file": "src/binbash/settings.py",
+			"settings":
+			{
+				"buffer_size": 3369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/admin.py",
+			"settings":
+			{
+				"buffer_size": 269,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/docker/images/Dockerfile",
+			"settings":
+			{
+				"buffer_size": 153,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/docker/bashmain.py",
+			"settings":
+			{
+				"buffer_size": 1325,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/docker/binbash.py",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question2/testcase1.txt",
+		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question 5/file.txt",
+		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question 2/file.txt",
+		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question1/file.txt",
+		"/home/harish/binbash/src/bashbin/initialise.py",
+		"/home/harish/QandA-master/QA/views.py",
+		"/home/harish/binbash/src/bashbin/docker/README.md",
+		"/tmp/a.py",
+		"/home/harish/QandA-master/QA/models.py",
+		"/home/harish/binbash/src/bashbin/serializers.py",
+		"/home/harish/binbash/src/binbash/serializers.py",
+		"/home/harish/binbash/src/manage.py"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"answer",
+			"our_answer",
+			"nswer.sh",
+			"ile_get_contents",
+			"save",
+			"json",
+			"signal",
+			"Conatiner",
+			"conatiner",
+			"\"\"",
+			".save(",
+			"top",
+			"order_",
+			"json",
+			"from django.http import HttpResponseRedirect, HttpResponse,JsonResponse",
+			"json",
+			"POST",
+			"post",
+			"pass"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/bashbin/views.py",
+					"settings":
+					{
+						"buffer_size": 9575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6963,
+								6963
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/bashbin/models.py",
+					"settings":
+					{
+						"buffer_size": 1107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								898,
+								898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/bashbin/tasks.py",
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								164,
+								164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/binbash/urls.py",
+					"settings":
+					{
+						"buffer_size": 1227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1182,
+								1182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/bashbin/templates/home.html",
+					"settings":
+					{
+						"buffer_size": 11,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9,
+								9
+							]
+						],
+						"settings":
+						{
+							"auto_name": "home.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/binbash/settings.py",
+					"settings":
+					{
+						"buffer_size": 3369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/bashbin/admin.py",
+					"settings":
+					{
+						"buffer_size": 269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/bashbin/docker/images/Dockerfile",
+					"settings":
+					{
+						"buffer_size": 153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/bashbin/docker/bashmain.py",
+					"settings":
+					{
+						"buffer_size": 1325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/bashbin/docker/binbash.py",
+					"settings":
+					{
+						"buffer_size": 1425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 144.0,
+	"status_bar_visible": true
+}

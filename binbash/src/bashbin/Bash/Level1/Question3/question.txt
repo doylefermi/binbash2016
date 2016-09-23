@@ -1,0 +1,5 @@
+Given n numbers, your task is to print the average of those numbers. You are required to enter the value of n.
+            Example:
+                INPUT: 3 4 5 6
+                OUTPUT: 5
+

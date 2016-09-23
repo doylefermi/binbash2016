@@ -1,0 +1,57 @@
+
+Keeping it simple - tail
+
+We should not need a regular expression, or more than one process, just to count characters.
+The command tail, often used to show the last lines of a file, has an option -c (--bytes), which seems to be just the right tool for this:
+
+$ printf 123456789 | tail -c 3
+789
+
+(When you are in a shell, it makes sense to use a method like in the answer of mikeserv, because it saves starting the process for tail.)
+Real Unicode characters?
+
+Now, you ask for the last three characters; That's not what this answer gives you: it outputs the last three bytes!
+
+As long as each character is one byte, tail -c just works. So it can be used if the character set is ASCII, ISO 8859-1 or a variant.
+
+If you have Unicode input, like in the common UTF-8 format, the result is wrong:
+
+$ printf 123αβγ | tail -c 3
+�γ
+
+In this example, using UTF-8, the greek characters alpha, beta and gamma are two bytes long:
+
+$ printf 123αβγ | wc -c  
+9
+
+The option -m can at least count the real unicode characters:
+
+printf 123αβγ | wc -m
+6
+
+Ok, so the last 6 bytes will give us the last 3 characters:
+
+$ printf 123αβγ | tail -c 6
+αβγ
+
+So, tail does not support handling general characters, and it does not even try (see below): It handles variable size lines, but no variable size characters.
+
+Let's put it this way: tail is just right for the structure of the problem to solve, but wrong for the kind of data.
+GNU coreutils
+
+Looking further, it turns out that thee GNU coreutils, the collection of basic tools like sed, ls, tail and cut, is not yet fully internationalized. Which is mainly about supporting Unicode.
+For example, cut would be a good candidate to use instead of tail here for character support; It does have options for working on bytes or chars, -c (--bytes) and -m (--chars);
+
+Only that -m/--chars is, as of version
+cut (GNU coreutils) 8.21, 2013,
+not implemented!
+
+From info cut:
+
+`-c CHARACTER-LIST'
+`--characters=CHARACTER-LIST'
+     Select for printing only the characters in positions listed in CHARACTER-LIST.  
+     The same as `-b' for now, but internationalization will change that.
+
+
+

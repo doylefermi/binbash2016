@@ -1,0 +1,4 @@
+The data still seems meaningless. Your task is to write a bash script that retrieves the character that occurs after every 2 consecutive vowels. The resulting letters may form a meaningful word. The input may be found in the file ‘file.txt’. Assume that the input file is available as a command line argument.
+    Example:
+        INPUT : adjdnaehskdsksiodsdnsoedjkneas
+        OUTPUT :hdds
