@@ -3,11 +3,10 @@ from bashbin.models import User, Question
 from django.http import JsonResponse
 from django.utils import timezone
 import os
-from bashbin.tasks import add, docker_run
+from bashbin.tasks import docker_run
 import json
 from celery.result import AsyncResult
-# \w could be a problem in urls
-# level update time update cat of answer as well
+
 def question_dir_path(level_no,question_no):
     return os.path.dirname(os.path.realpath(__file__)) + r"/Bash/Level{0}/Question{1}/".format(level_no,question_no)
 def read_file(path):
@@ -184,7 +183,7 @@ def binbash_request(request):
         "whoami":user_details
     }
     if cmd[0] == "submit" :
-        request.POST["user_id"] = user_id
+        request.POST["user_id"] = user_id[0]
     func = switch.get(cmd[0], lambda request: JsonResponse({ "status": "Failure",
                                                              "reason": "bash: {0}: command not found...".format(cmd[0]) },
                                                              content_type ="application/json"))
@@ -201,7 +200,7 @@ def upload(request):
         print path
         return submit_request(user_id, path)
     return JsonResponse({"status": "Failure", "reason": "needs POST request"}, content_type ="application/json")
-# mkdir answers
+
 def handle_uploaded_file(f, cuser):
     path = r'/home/ec2-user/binbash_new/binbash/src/bashbin/answers/{0}_L{1}_Q{2}.sh'.format(cuser.user_id, cuser.level, cuser.question)
     with open(path, 'w+') as destination:

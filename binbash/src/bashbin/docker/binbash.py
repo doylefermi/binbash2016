@@ -7,10 +7,6 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	final_cases = []
 	for i in cases:
 		final_cases.append(i.strip())
-
-	# remove the folder test & empty the home dir
-
-
 	for the_file in os.listdir(users_dir):
 		file_path = os.path.join(users_dir, the_file)
 	try:
@@ -19,11 +15,6 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 			#elif os.path.isdir(file_path): shutil.rmtree(file_path)
 	except Exception as e:
 		print(e)
-
-	# now home dir is emptied
-
-
-
 	dest = users_dir
 
 	start_container =['docker','start',container_id]

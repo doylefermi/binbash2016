@@ -24,7 +24,6 @@ urlpatterns = [
     url(r'^ls/$',bashbin.views.ls_request),
     url(r'^help/$',bashbin.views.help_request),
     url(r'^top/$',bashbin.views.scoreboard_request),
-    url(r'^submit/$',bashbin.views.submit_request),
     url(r'^request/$',bashbin.views.binbash_request),
     url(r'^filldb/$',bashbin.views.input_everything),
     url(r'^$',bashbin.views.start_page)
