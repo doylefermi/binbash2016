@@ -107,7 +107,15 @@
 			"file": "src/bashbin/views.py",
 			"settings":
 			{
-				"buffer_size": 9575,
+				"buffer_size": 10531,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/harish/Downloads/Telegram Desktop/2016-09-19-APIcalls.markdown",
+			"settings":
+			{
+				"buffer_size": 3409,
 				"line_ending": "Unix"
 			}
 		},
@@ -123,7 +131,7 @@
 			"file": "src/bashbin/tasks.py",
 			"settings":
 			{
-				"buffer_size": 227,
+				"buffer_size": 187,
 				"line_ending": "Unix"
 			}
 		},
@@ -131,7 +139,7 @@
 			"file": "src/binbash/urls.py",
 			"settings":
 			{
-				"buffer_size": 1227,
+				"buffer_size": 1175,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,7 +147,7 @@
 			"file": "src/bashbin/templates/home.html",
 			"settings":
 			{
-				"buffer_size": 11,
+				"buffer_size": 0,
 				"line_ending": "Unix",
 				"name": "home.html"
 			}
@@ -148,7 +156,7 @@
 			"file": "src/binbash/settings.py",
 			"settings":
 			{
-				"buffer_size": 3369,
+				"buffer_size": 3330,
 				"line_ending": "Unix"
 			}
 		},
@@ -180,7 +188,7 @@
 			"file": "src/bashbin/docker/binbash.py",
 			"settings":
 			{
-				"buffer_size": 1425,
+				"buffer_size": 1344,
 				"line_ending": "Unix"
 			}
 		}
@@ -238,6 +246,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scoreboard",
+			"getde",
+			"create=",
+			"user",
+			"CREATE",
+			"json",
 			"answer",
 			"our_answer",
 			"nswer.sh",
@@ -274,7 +288,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -282,15 +296,15 @@
 					"file": "src/bashbin/views.py",
 					"settings":
 					{
-						"buffer_size": 9575,
+						"buffer_size": 10531,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6963,
-								6963
+								4892,
+								4892
 							]
 						],
 						"settings":
@@ -300,13 +314,41 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1428.0,
+						"translation.y": 2038.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/home/harish/Downloads/Telegram Desktop/2016-09-19-APIcalls.markdown",
+					"settings":
+					{
+						"buffer_size": 3409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3409,
+								3409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "src/bashbin/models.py",
 					"settings":
 					{
@@ -334,19 +376,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "src/bashbin/tasks.py",
 					"settings":
 					{
-						"buffer_size": 227,
+						"buffer_size": 187,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								164,
-								164
+								0,
+								0
 							]
 						],
 						"settings":
@@ -360,19 +402,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "src/binbash/urls.py",
 					"settings":
 					{
-						"buffer_size": 1227,
+						"buffer_size": 1175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1182,
-								1182
+								0,
+								0
 							]
 						],
 						"settings":
@@ -388,19 +430,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "src/bashbin/templates/home.html",
 					"settings":
 					{
-						"buffer_size": 11,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								0,
+								0
 							]
 						],
 						"settings":
@@ -415,19 +457,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/binbash/settings.py",
 					"settings":
 					{
-						"buffer_size": 3369,
+						"buffer_size": 3330,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								464,
-								464
+								0,
+								0
 							]
 						],
 						"settings":
@@ -443,7 +485,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "src/bashbin/admin.py",
 					"settings":
 					{
@@ -469,7 +511,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "src/bashbin/docker/images/Dockerfile",
 					"settings":
 					{
@@ -495,7 +537,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "src/bashbin/docker/bashmain.py",
 					"settings":
 					{
@@ -522,11 +564,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "src/bashbin/docker/binbash.py",
 					"settings":
 					{
-						"buffer_size": 1425,
+						"buffer_size": 1344,
 						"regions":
 						{
 						},

@@ -94,7 +94,7 @@ def help_request(request):
     return JsonResponse(context, content_type ="application/json")
 
 def scoreboard_request(request):
-    user_list = User.objects.order_by('-level', '-question', '-last_correct_submit_timestamp')#[:10]
+    user_list = User.objects.order_by('-level', '-question', 'last_correct_submit_timestamp')#[:10]
     context =  { "status"       : "Success",
                  "result count" : len(user_list) }
     user_details = {}
@@ -125,9 +125,6 @@ def submit_request(user_id, answer_path):
     print task_id.wait(timeout=120)
     if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
         context["status"] = "Success"
-    else :
-        context["status"] = "Failure"
-    if context["status"] == "Success" :
         current_user.last_correct_submit_timestamp = timezone.now()
         if (current_user.question == 5):
             current_user.level = current_user.level + 1
@@ -136,6 +133,10 @@ def submit_request(user_id, answer_path):
             current_user.question = current_user.question + 1
         current_user.cat_of_answer = ""
         current_user.save()
+        context["result"] = "Success on test cases\n" + context["result"]
+    else :
+        context["status"] = "Success"
+        context["result"] = "Failure on test cases\n" + context["result"]
     return JsonResponse(context, content_type ="application/json")
 
 def binbash_request(request):
@@ -152,10 +153,9 @@ def binbash_request(request):
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : "New user created",
+                            "result"       : Qobject.intro_to_level,
                             "level"        : current_user.level,
                             "question"     : current_user.question,
-                            "level_info"   : Qobject.intro_to_level,
                             "question_info": Qobject.intro_to_question }
                 return JsonResponse(context, content_type ="application/json")
             context = { "status": "Failure",
@@ -166,8 +166,6 @@ def binbash_request(request):
                         "reason": "2 users with same id found. Contact admin." }
             return JsonResponse(context, content_type ="application/json")
     cmd = request.GET.get("cmd","").split()
-    if request.GET.get("getdetails","") == "true" :
-        return user_details(request)
     if len(cmd) == 0:
         context = { "status": "Failure",
                     "reason": "No cmd provided" }
