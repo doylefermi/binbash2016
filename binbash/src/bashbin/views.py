@@ -182,6 +182,7 @@ def binbash_request(request):
         "help": help_request,
         "whoami":user_details
     }
+    request.POST._mutable = True
     if cmd[0] == "submit" :
         request.POST["user_id"] = user_id[0]
     func = switch.get(cmd[0], lambda request: JsonResponse({ "status": "Failure",
@@ -193,12 +194,16 @@ def start_page(request):
     return render(request,"index.html",{})
 
 def upload(request):
+    print request.FILES
+    print request.POST
     if request.method == 'POST':
-        user_id = request.POST.get("user_id","")
-        cuser = User.objects.get(user_id=user_id)
-        path = handle_uploaded_file(request.FILES['file'], cuser)
-        print path
-        return submit_request(user_id, path)
+        if request.FILES.get('file',"") != "":
+            user_id = request.POST.get("user_id","")
+            cuser = User.objects.get(user_id=user_id)
+            path = handle_uploaded_file(request.FILES['file'], cuser)
+            return submit_request(user_id, path)
+        else :
+            return JsonResponse({"status": "Failure", "reason": "No file in POST request"}, content_type ="application/json")
     return JsonResponse({"status": "Failure", "reason": "needs POST request"}, content_type ="application/json")
 
 def handle_uploaded_file(f, cuser):
