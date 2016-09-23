@@ -119,7 +119,7 @@ def submit_request(user_id, answer_path):
     current_user.cat_of_answer = answer_path
     current_user.save()
     context = {}
-    home = os.path.dirname(os.path.realpath(__file__)) + r"/home/"
+    home = os.path.dirname(os.path.realpath(__file__)) + r"/home"
     task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
     context = task_id.get()
     print context
@@ -182,6 +182,7 @@ def binbash_request(request):
         "help": help_request,
         "whoami":user_details
     }
+    request.POST._mutable = True
     if cmd[0] == "submit" :
         request.POST["user_id"] = user_id[0]
     func = switch.get(cmd[0], lambda request: JsonResponse({ "status": "Failure",
@@ -193,16 +194,20 @@ def start_page(request):
     return render(request,"index.html",{})
 
 def upload(request):
+    print request.FILES
+    print request.POST
     if request.method == 'POST':
-        user_id = request.POST.get("user_id","")
-        cuser = User.objects.get(user_id=user_id)
-        path = handle_uploaded_file(request.FILES['file'], cuser)
-        print path
-        return submit_request(user_id, path)
+        if request.FILES.get('file',"") != "":
+            user_id = request.POST.get("user_id","")
+            cuser = User.objects.get(user_id=user_id)
+            path = handle_uploaded_file(request.FILES['file'], cuser)
+            return submit_request(user_id, path)
+        else :
+            return JsonResponse({"status": "Failure", "reason": "No file in POST request"}, content_type ="application/json")
     return JsonResponse({"status": "Failure", "reason": "needs POST request"}, content_type ="application/json")
 
 def handle_uploaded_file(f, cuser):
-    path = r'/home/ec2-user/binbash_new/binbash/src/bashbin/answers/{0}_L{1}_Q{2}.sh'.format(cuser.user_id, cuser.level, cuser.question)
+    path = r'/home/ec2-user/binbash2016/binbash/src/bashbin/answers/{0}_L{1}_Q{2}.sh'.format(cuser.user_id, cuser.level, cuser.question)
     with open(path, 'w+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
