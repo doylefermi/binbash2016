@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from django.utils import timezone
 import os
 from bashbin.tasks import docker_run
-import json
 from celery.result import AsyncResult
 
 def question_dir_path(level_no,question_no):
@@ -124,8 +123,7 @@ def submit_request(user_id, answer_path):
     context = task_id.get()
     print context
     print task_id.wait(timeout=120)
-    # context = json.loads(context)
-    if (context["md5"] == Qobject.answer_md5) :
+    if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
         context["status"] = "Success"
     else :
         context["status"] = "Failure"
