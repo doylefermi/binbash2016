@@ -109,10 +109,14 @@ def scoreboard_request(request):
     user_details = {}
     user_details[0] = ["user_id", "level_no", "question_no", "last submitted correct answers timestamp"]
     j = 1
+    header = """USER\t\tLEVEL\t\tQUESTION\t\tLAST CORRECT ANSWER TIME\n"""
+    context["result"] = header
     for i in user_list:
         user_details[j] = [i.user_id, i.level, i.question, i.last_correct_submit_timestamp]
+        user_details_str = """{0}\t\t{1}\t\t{2}\t\t{3}\n""".format(i.user_id, i.level, i.question, i.last_correct_submit_timestamp)
+        context["result"] += user_details_str
         j = j + 1
-    context["result"] = user_details
+    context["result_json"] = user_details
     return JsonResponse(context, content_type ="application/json")
 
 def submit_request(user_id, answer_path):
