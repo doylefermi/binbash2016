@@ -1,4 +1,4 @@
-import subprocess
+import subprocess32 as subprocess
 import os
 import shutil
 from unidecode import unidecode
@@ -33,21 +33,20 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 
 	shutil.copyfile(filepath, dest+'/user.sh')
 
-	if ''.join(final_cases) == "file.txt":
+	if ''.join(final_cases).endswith(".txt"):
 		shutil.copyfile(filetxt_path, dest+'/'+''.join(final_cases))
 		final_cases = ''.join(final_cases).split()
 
-	print final_cases
+	# print final_cases
 	# copyto_container = ['docker','cp',filepath,container_id.strip()+':/user.sh']
 	# subprocess.check_output(copyto_container)
 	# copyto_container = ['docker','cp',filetxt_path,container_id.strip()+':/file.txt']
 	# subprocess.check_output(copyto_container)
 	run_container = ['docker','exec',container_id.strip(),'/bin/bash','user.sh']
 	run_container+=final_cases
-
-	print (run_container)
+	# print (run_container)
 	try:
-		container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT)
+		container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT, timeout=15)
 		return container_out
 	except subprocess.CalledProcessError as e:	#TODO: Raise timeout error
 		return e.output
