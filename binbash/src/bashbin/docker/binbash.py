@@ -45,6 +45,6 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	# print (run_container)
 	try:
 		container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT)
-		return container_out.decode("utf-16le")
+		return container_out.decode("unicode_escape")
 	except subprocess.CalledProcessError as e:	#TODO: Raise timeout error
-		return e.output.decode("utf-16le")
+		return e.output.decode("unicode_escape")
