@@ -23,7 +23,6 @@ SECRET_KEY = 'svr9pjp$6sg2@dr#e07=s8!jgdha5djtwe$umw=lun#aobh00&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 import djcelery

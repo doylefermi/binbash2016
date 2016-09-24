@@ -18,12 +18,7 @@ from django.contrib import admin
 import bashbin.views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^details/$',bashbin.views.user_details),
-    url(r'^cat/$',bashbin.views.cat_request),
-    url(r'^ls/$',bashbin.views.ls_request),
-    url(r'^help/$',bashbin.views.help_request),
-    url(r'^top/$',bashbin.views.scoreboard_request),
+    url(r'^nimda/', admin.site.urls), #admin reversed
     url(r'^request/$',bashbin.views.binbash_request),
     url(r'^filldb/$',bashbin.views.input_everything),
     url(r'^$',bashbin.views.start_page)
