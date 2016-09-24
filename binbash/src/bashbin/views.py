@@ -30,7 +30,16 @@ def input_everything(request):
                         Q.save()
                     except IOError as e:
                         print "IO Error level{0} question{1} {2}".format(i,j,e)
-        return JsonResponse({"inputdb":"wrking"}, content_type ="application/json")
+                else :
+                    Q = Question.objects.get(question_id=j, level_id=i)
+                    Q.question_timestamp=timezone.now()
+                    Q.ls_cmd=" ".join(listdir_nohidden(dir_path))
+                    Q.cat_of_question=read_file(dir_path+"question.txt")
+                    Q.cat_of_file=read_file(dir_path+"file.txt")
+                    Q.cat_of_testcase=read_file(dir_path+"testcase.txt")
+                    Q.answer_md5=read_file(dir_path+".md5")
+                    Q.save()
+        return JsonResponse({"inputdb":"wrked"}, content_type ="application/json")
     else :
         return JsonResponse({"inputdb":"failed due to invalid token"}, content_type ="application/json")    
 def user_details(request):
@@ -129,7 +138,7 @@ def submit_request(user_id, answer_path):
         if (current_user.question == 5):
             current_user.level = current_user.level + 1
             current_user.question = 1
-        if (current_user.question < 5):
+        elif (current_user.question < 5):
             current_user.question = current_user.question + 1
         current_user.cat_of_answer = ""
         current_user.save()
@@ -161,7 +170,17 @@ def binbash_request(request):
             context = { "status": "Failure",
                         "reason": "No user present" }
             return JsonResponse(context, content_type ="application/json")
-        elif user_count > 1 :
+        elif user_count == 1 :
+            if request.GET.get("create","") == "true":
+                current_user = User.objects.get(user_id=user_id[0])
+                Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
+                context = { "status"       : "Success",
+                            "result"       : Qobject.intro_to_level,
+                            "level"        : current_user.level,
+                            "question"     : current_user.question,
+                            "question_info": Qobject.intro_to_question }
+                return JsonResponse(context, content_type ="application/json")
+        elif user_count >= 1 :
             context = { "status": "Failure",
                         "reason": "2 users with same id found. Contact admin." }
             return JsonResponse(context, content_type ="application/json")
