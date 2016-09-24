@@ -1,7 +1,6 @@
 from binbash import run_code
 import subprocess
 import hashlib
-from unidecode import unidecode
 
 def check_code(filepath, filetxt_path, testcases, users_dir):
 	i = 0
@@ -12,25 +11,26 @@ def check_code(filepath, filetxt_path, testcases, users_dir):
 		if i==0:
 			# create_container = ['docker','run','-id','binbash/bash', '/bin/bash']
 			create_container = ['docker','run','-id','-m', '10M', '--kernel-memory', '5M','-v',users_dir+':/tmp','binbash/bash', '/bin/bash']
-			container_id = unidecode(subprocess.check_output(create_container))#.decode("utf-8")
-		user_out = unidecode(run_code(filepath, filetxt, test, container_id,users_dir))
+			container_id = subprocess.check_output(create_container).decode("utf-8")
+		user_out = run_code(filepath, filetxt, test, container_id,users_dir)
+
 		# original_out = run_code(original_filepath, filetxt_path, test)
 		# print (original_out + " User out:-\n" + user_out)
 		test_cases_file = open(test)
-		# print type (user_out)#.encode("utf8"))
-		md5_user = hashlib.md5(user_out).hexdigest()
+
+		md5_user = hashlib.md5(user_out.encode('utf-8')).hexdigest()
 		# md5_original = hashlib.md5(original_out.encode('utf-8')).hexdigest()
 		if i == 0 :
 			testcase1res = user_out
-			data['result'] = "Testcase input: " + str(test_cases_file.read()) + "\nYour output: " + user_out
+			data['result'] = "Testcase input: " + str(test_cases_file.read()) + "\nYour output: " + user_out.encode('utf-8')
 			i = i + 1
 		# print md5_user
 		# data['expected_output'] = original_out
-
+		print user_out.encode('utf-8') + " " + md5_user
 		md5_final = md5_final + md5_user
 		# print md5_final
 
-	data["md5"] = hashlib.md5(md5_final).hexdigest()
+	data["md5"] = hashlib.md5(md5_final.encode('utf-8')).hexdigest()
 	clean_container = ['docker','rm','-f',container_id.strip()]
 	subprocess.check_output(clean_container)
 	return data

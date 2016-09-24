@@ -1,3 +1,3 @@
 #!/bin/bash
-grep -o "[A-Z]" $1 | tr '\n' '\0' 
+grep -o "[A-Z]" $1 | tr -d '\n'
 

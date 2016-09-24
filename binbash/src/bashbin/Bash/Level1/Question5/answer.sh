@@ -2,7 +2,7 @@
 
 status="AM"
 IFS=':' read -a time <<< "$1"
-if [ ${time[0]} -gt 24 ] || [ ${time[1]} -gt 60 ]
+if [ ${time[0]} -ge 24 ] || [ ${time[1]} -ge 60 ]
 then 
 	echo "Invalid time"
 	exit 1

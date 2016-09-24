@@ -1,4 +1,4 @@
-Your task is to write a bash script to convert the given time in 24 hr clock to 12 hr clock. The time in 24 hr clock must follow the format HH:MM. The time in 12 hr clock must follow the format HH:MM AM/PM.
+Your task is to write a bash script to convert the given time in 24 hr clock to 12 hr clock. The time in 24 hr clock must follow the format HH:MM. The time in 12 hr clock must follow the format HH:MM AM/PM. The input value must be entered via command line.
 		Example:
 			INPUT: 13:15
 			OUTPUT: 01:15 PM

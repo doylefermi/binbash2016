@@ -1,4 +1,4 @@
-Your task is to compute the following function for any given positive number. The task should be implemented using a recursive function. The number must be entered at runtime.
+Your task is to compute the following function for any given positive number. The task should be implemented using a recursive function. The number must be entered as a command line argument.
 	f(0) = 1, f(1) = 2, f(n) = f(n-1) * f(n-2)
 	Example:
                 INPUT: 4

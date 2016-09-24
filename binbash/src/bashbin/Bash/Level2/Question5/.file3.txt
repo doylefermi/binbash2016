@@ -1,18 +1,18 @@
-3/11/16 1:00 AM - Tantek: what does the datetime stamp represent?
-3/11/16 1:22 AM - KevinMarks: in iRC, when it was said
-4/11/16 1:30 AM - Tantek: is it a point in time *before* they started speaking?
-3/11/16 2:00 AM - Tantek: or *after*?
-5/11/16 2:07 PM - Tantek: or somewhere in the *middle*?
-3/11/16 2:55 PM - KevinMarks: usually it is quantised to seconds
-3/11/16 3:00 PM - KevinMarks: and it is time the msg was received
-3/11/16 3:20 PM - Tantek: but the second they started typing or pressed return?
-6/11/16 4:00 PM - KevinMarks: prssed return i think
-3/11/16 5:00 PM - Tantek: what does the datetime stamp represent?
-3/11/16 5:22 PM - KevinMarks: in iRC, when it was said
-4/11/16 6:00 AM - Tantek: is it a point in time *before* they started speaking?
-3/11/16 7:00 AM - Tantek: or *after*?
-5/11/16 7:07 AM - Tantek: or somewhere in the *middle*?
-3/11/16 7:55 AM - KevinMarks: usually it is quantised to seconds
-3/11/16 8:00 AM - KevinMarks: and it is time the msg was received
-3/11/16 9:00 AM - Tantek: but the second they started typing or pressed return?
-6/11/16 10:00 AM - KevinMarks: prssed return i think
+3/11/16 1:00 AM - Tantek: Rcvo yjzn ocz yvozodhz novhk mzkmznzio?
+3/11/16 1:22 AM - KevinMarks: Di dMX, rczi do rvn nvdy
+4/11/16 1:30 AM - Tantek: Dn do v kjdio di odhz *wzajmz* oczt novmozy nkzvfdib?
+3/11/16 2:00 AM - Tantek: Jm *vaozm*?
+5/11/16 2:07 PM - Tantek: Jm njhzrczmz di ocz *hdyygz*?
+3/11/16 2:55 PM - KevinMarks: Pnpvggt do dn lpviodnzy oj nzxjiyn
+3/11/16 3:00 PM - KevinMarks: Viy do dn odhz ocz hnb rvn mzxzdqzy
+3/11/16 3:20 PM - Tantek: Wpo ocz nzxjiy oczt novmozy otkdib jm kmznnzy mzopmi?
+6/11/16 4:00 PM - KevinMarks: Kmznnzy mzopmi d ocdif
+3/11/16 5:00 PM - Tantek: Rcvo yjzn ocz yvozodhz novhk mzkmznzio?
+3/11/16 5:22 PM - KevinMarks: Di dMX, rczi do rvn nvdy
+4/11/16 6:00 AM - Tantek: Dn do v kjdio di odhz *wzajmz* oczt novmozy nkzvfdib?
+3/11/16 7:00 AM - Tantek: Jm *vaozm*?
+5/11/16 7:07 AM - Tantek: Jm njhzrczmz di ocz *hdyygz*?
+3/11/16 7:55 AM - KevinMarks: Pnpvggt do dn lpviodnzy oj nzxjiyn
+3/11/16 8:00 AM - KevinMarks: Viy do dn odhz ocz hnb rvn mzxzdqzy
+3/11/16 9:00 AM - Tantek: Wpo ocz nzxjiy oczt novmozy otkdib jm kmznnzy mzopmi?
+6/11/16 10:00 AM - KevinMarks: Kmnnzy mzopmi D ocdif
