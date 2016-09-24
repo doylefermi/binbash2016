@@ -8,6 +8,7 @@ class User(models.Model):
     question = models.IntegerField()
     level = models.IntegerField()
     last_correct_submit_timestamp = models.DateTimeField()
+    last_login_timestamp = models.DateTimeField()
     cat_of_answer = models.TextField(blank=True, null=True)
     def __unicode__(self):
             return str(self.user_id)

@@ -45,12 +45,13 @@ def input_everything(request):
 def user_details(request):
     current_user = User.objects.get(user_id=request.GET.get("user_id",""))
     Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
+    a = "\nYour last login occured at {}.\n".format(current_user.last_login_timestamp)
     context = { "status"       : "Success",
                 "level"        : current_user.level,
                 "question"     : current_user.question,
                 "level_info"   : Qobject.intro_to_level,
                 "question_info": Qobject.intro_to_question,
-                "result"       : "You are currently in level {0} question {1}".format(current_user.level, current_user.question)}
+                "result"       : str(a) + "You are currently in level {0} question {1}".format(current_user.level, current_user.question)}
     return JsonResponse(context, content_type ="application/json")
 
 def ls_request(request):
@@ -162,11 +163,11 @@ def binbash_request(request):
         user_count = len(User.objects.filter(user_id=user_id[0]))
         if user_count == 0:
             if request.GET.get("create","") == "true":
-                User(user_id = str(user_id[0]), level=1, question=1, last_correct_submit_timestamp=timezone.now()).save()
+                User(user_id = str(user_id[0]), level=1, question=1, last_login_timestamp=timezone.now(),last_correct_submit_timestamp=timezone.now()).save()
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : Qobject.intro_to_level,
+                            "result"       : str(Qobject.intro_to_level) + "\nYour last login occured at {}".format(current_user.last_login_timestamp),
                             "level"        : current_user.level,
                             "question"     : current_user.question,
                             "question_info": Qobject.intro_to_question }
@@ -179,10 +180,12 @@ def binbash_request(request):
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : Qobject.intro_to_level,
+                            "result"       : str(Qobject.intro_to_level) + "\nYour last login occured at {}".format(current_user.last_login_timestamp),
                             "level"        : current_user.level,
                             "question"     : current_user.question,
                             "question_info": Qobject.intro_to_question }
+                current_user.last_login_timestamp=timezone.now()
+                current_user.save()
                 return JsonResponse(context, content_type ="application/json")
         elif user_count >= 1 :
             context = { "status": "Failure",
