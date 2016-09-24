@@ -12,8 +12,8 @@ def check_code(filepath, filetxt_path, testcases, users_dir):
 		if i==0:
 			# create_container = ['docker','run','-id','binbash/bash', '/bin/bash']
 			create_container = ['docker','run','-id','-m', '10M', '--kernel-memory', '5M','-v',users_dir+':/tmp','binbash/bash', '/bin/bash']
-			container_id = subprocess.check_output(create_container)#.decode("utf-8")
-		user_out = run_code(filepath, filetxt, test, container_id,users_dir)
+			container_id = unidecode(subprocess.check_output(create_container))#.decode("utf-8")
+		user_out = unidecode(run_code(filepath, filetxt, test, container_id,users_dir))
 		# original_out = run_code(original_filepath, filetxt_path, test)
 		# print (original_out + " User out:-\n" + user_out)
 		test_cases_file = open(test)
