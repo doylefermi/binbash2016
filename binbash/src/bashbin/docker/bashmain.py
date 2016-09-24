@@ -8,14 +8,14 @@ def check_code(filepath, filetxt_path, testcases, users_dir):
 	data = {}
 	for test,filetxt in zip(testcases,filetxt_path):
 		if i==0:
-			# create_container = ['docker','run','-id','binbash/bash', '/bin/sh']
-			create_container = ['docker','run','-id','-m', '10M', '--kernel-memory', '5M','-v',users_dir+':/tmp','binbash/bash', '/bin/sh']
+			# create_container = ['docker','run','-id','binbash/bash', '/bin/bash']
+			create_container = ['docker','run','-id','-m', '10M', '--kernel-memory', '5M','-v',users_dir+':/tmp','binbash/bash', '/bin/bash']
 			container_id = subprocess.check_output(create_container)#.decode("utf-8")
 		user_out = run_code(filepath, filetxt, test, container_id,users_dir)
 		# original_out = run_code(original_filepath, filetxt_path, test)
 		# print (original_out + " User out:-\n" + user_out)
 		test_cases_file = open(test)
-		print type (user_out)#.encode("utf8"))
+		# print type (user_out)#.encode("utf8"))
 		md5_user = hashlib.md5(user_out).hexdigest()
 		# md5_original = hashlib.md5(original_out.encode('utf-8')).hexdigest()
 		if i == 0 :
