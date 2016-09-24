@@ -44,9 +44,10 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	# subprocess.check_output(copyto_container)
 	run_container = ['docker','exec',container_id.strip(),'/bin/bash','user.sh']
 	run_container+=final_cases
-	# print (run_container)
+	#print (run_container)
 	try:
 		container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT, timeout=15)
-		return container_out.encode("unicode")
+		print type(container_out)
+		return container_out.encode("utf-8")
 	except subprocess.CalledProcessError as e:	#TODO: Raise timeout error
-		return e.output.encode("unicode")
+		return e.output.encode("utf-8")
