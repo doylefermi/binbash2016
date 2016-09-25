@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_details_str"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
 				"tim",
 				"timezone"
 			],
@@ -80,10 +88,6 @@
 				"cat_request"
 			],
 			[
-				"user",
-				"user_id"
-			],
-			[
 				"re",
 				"request"
 			],
@@ -107,15 +111,7 @@
 			"file": "src/bashbin/views.py",
 			"settings":
 			{
-				"buffer_size": 10531,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/harish/Downloads/Telegram Desktop/2016-09-19-APIcalls.markdown",
-			"settings":
-			{
-				"buffer_size": 3409,
+				"buffer_size": 12413,
 				"line_ending": "Unix"
 			}
 		},
@@ -123,7 +119,7 @@
 			"file": "src/bashbin/models.py",
 			"settings":
 			{
-				"buffer_size": 1107,
+				"buffer_size": 1157,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,24 +135,15 @@
 			"file": "src/binbash/urls.py",
 			"settings":
 			{
-				"buffer_size": 1175,
+				"buffer_size": 949,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/bashbin/templates/home.html",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "home.html"
 			}
 		},
 		{
 			"file": "src/binbash/settings.py",
 			"settings":
 			{
-				"buffer_size": 3330,
+				"buffer_size": 3377,
 				"line_ending": "Unix"
 			}
 		},
@@ -172,7 +159,7 @@
 			"file": "src/bashbin/docker/images/Dockerfile",
 			"settings":
 			{
-				"buffer_size": 153,
+				"buffer_size": 203,
 				"line_ending": "Unix"
 			}
 		},
@@ -180,7 +167,7 @@
 			"file": "src/bashbin/docker/bashmain.py",
 			"settings":
 			{
-				"buffer_size": 1325,
+				"buffer_size": 1404,
 				"line_ending": "Unix"
 			}
 		},
@@ -188,7 +175,23 @@
 			"file": "src/bashbin/docker/binbash.py",
 			"settings":
 			{
-				"buffer_size": 1344,
+				"buffer_size": 1573,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/docker/test_program.py",
+			"settings":
+			{
+				"buffer_size": 421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bashbin/Bash/Level1/Question2/.md5",
+			"settings":
+			{
+				"buffer_size": 33,
 				"line_ending": "Unix"
 			}
 		}
@@ -217,6 +220,8 @@
 	},
 	"file_history":
 	[
+		"/home/ec2-user/binbash2016/binbash/src/bashbin/templates/home.html",
+		"/home/harish/Downloads/Telegram Desktop/2016-09-19-APIcalls.markdown",
 		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question2/testcase1.txt",
 		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question 5/file.txt",
 		"/home/harish/xcl/binbash/src/bashbin/Bash/Level1/Question 2/file.txt",
@@ -232,7 +237,7 @@
 	],
 	"find":
 	{
-		"height": 48.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -246,6 +251,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"exists",
+			"decode",
+			"fail",
 			"scoreboard",
 			"getde",
 			"create=",
@@ -288,7 +296,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -296,15 +304,15 @@
 					"file": "src/bashbin/views.py",
 					"settings":
 					{
-						"buffer_size": 10531,
+						"buffer_size": 12413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4892,
-								4892
+								10136,
+								10136
 							]
 						],
 						"settings":
@@ -314,30 +322,30 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2038.0,
+						"translation.y": 2310.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/harish/Downloads/Telegram Desktop/2016-09-19-APIcalls.markdown",
+					"file": "src/bashbin/models.py",
 					"settings":
 					{
-						"buffer_size": 3409,
+						"buffer_size": 1157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3409,
-								3409
+								316,
+								316
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -349,34 +357,6 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/bashbin/models.py",
-					"settings":
-					{
-						"buffer_size": 1107,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								898,
-								898
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "src/bashbin/tasks.py",
 					"settings":
 					{
@@ -402,19 +382,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "src/binbash/urls.py",
 					"settings":
 					{
-						"buffer_size": 1175,
+						"buffer_size": 949,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								798,
+								798
 							]
 						],
 						"settings":
@@ -425,67 +405,40 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/binbash/settings.py",
+					"settings":
+					{
+						"buffer_size": 3377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3225,
+								3225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "src/bashbin/templates/home.html",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "home.html",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/binbash/settings.py",
-					"settings":
-					{
-						"buffer_size": 3330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "src/bashbin/admin.py",
 					"settings":
 					{
@@ -511,11 +464,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 6,
 					"file": "src/bashbin/docker/images/Dockerfile",
 					"settings":
 					{
-						"buffer_size": 153,
+						"buffer_size": 203,
 						"regions":
 						{
 						},
@@ -537,11 +490,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "src/bashbin/docker/bashmain.py",
 					"settings":
 					{
-						"buffer_size": 1325,
+						"buffer_size": 1404,
 						"regions":
 						{
 						},
@@ -564,11 +517,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "src/bashbin/docker/binbash.py",
 					"settings":
 					{
-						"buffer_size": 1344,
+						"buffer_size": 1573,
 						"regions":
 						{
 						},
@@ -583,6 +536,58 @@
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 210.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/bashbin/docker/test_program.py",
+					"settings":
+					{
+						"buffer_size": 421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/bashbin/Bash/Level1/Question2/.md5",
+					"settings":
+					{
+						"buffer_size": 33,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -649,6 +654,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 144.0,
+	"side_bar_width": 252.0,
 	"status_bar_visible": true
 }

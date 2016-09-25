@@ -5,7 +5,7 @@ from django.utils import timezone
 import os
 from bashbin.tasks import docker_run
 from celery.result import AsyncResult
-
+import subprocess32 as subprocess
 def question_dir_path(level_no,question_no):
     return os.path.dirname(os.path.realpath(__file__)) + r"/Bash/Level{0}/Question{1}/".format(level_no,question_no)
 def read_file(path):
@@ -133,8 +133,12 @@ def submit_request(user_id, answer_path):
     current_user.save()
     context = {}
     home = os.path.dirname(os.path.realpath(__file__)) + r"/home"
-    task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
-    context = task_id.get()
+    try :
+        task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
+        context = task_id.get()
+    except subprocess.TimeoutExpired:
+        return JsonResponse({ "status" : "Success",
+                              "result" : "Timed out" }, content_type ="application/json")
     print context
     print task_id.wait(timeout=120)
     if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
