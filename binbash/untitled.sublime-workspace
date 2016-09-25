@@ -5,7 +5,7 @@
 		[
 			[
 				"user",
-				"user_details_str"
+				"user_id"
 			],
 			[
 				"for",
@@ -111,7 +111,7 @@
 			"file": "src/bashbin/views.py",
 			"settings":
 			{
-				"buffer_size": 12413,
+				"buffer_size": 12446,
 				"line_ending": "Unix"
 			}
 		},
@@ -143,7 +143,7 @@
 			"file": "src/binbash/settings.py",
 			"settings":
 			{
-				"buffer_size": 3377,
+				"buffer_size": 3378,
 				"line_ending": "Unix"
 			}
 		},
@@ -159,7 +159,7 @@
 			"file": "src/bashbin/docker/images/Dockerfile",
 			"settings":
 			{
-				"buffer_size": 203,
+				"buffer_size": 288,
 				"line_ending": "Unix"
 			}
 		},
@@ -175,7 +175,7 @@
 			"file": "src/bashbin/docker/binbash.py",
 			"settings":
 			{
-				"buffer_size": 1573,
+				"buffer_size": 2250,
 				"line_ending": "Unix"
 			}
 		},
@@ -251,6 +251,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"timeout",
 			"exists",
 			"decode",
 			"fail",
@@ -296,7 +297,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -304,15 +305,15 @@
 					"file": "src/bashbin/views.py",
 					"settings":
 					{
-						"buffer_size": 12413,
+						"buffer_size": 12446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10136,
-								10136
+								7297,
+								7297
 							]
 						],
 						"settings":
@@ -321,8 +322,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 2310.0,
+						"translation.x": 118.0,
+						"translation.y": 1661.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -414,15 +415,15 @@
 					"file": "src/binbash/settings.py",
 					"settings":
 					{
-						"buffer_size": 3377,
+						"buffer_size": 3378,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3225,
-								3225
+								816,
+								816
 							]
 						],
 						"settings":
@@ -432,7 +433,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 960.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -468,7 +469,7 @@
 					"file": "src/bashbin/docker/images/Dockerfile",
 					"settings":
 					{
-						"buffer_size": 203,
+						"buffer_size": 288,
 						"regions":
 						{
 						},
@@ -521,7 +522,7 @@
 					"file": "src/bashbin/docker/binbash.py",
 					"settings":
 					{
-						"buffer_size": 1573,
+						"buffer_size": 2250,
 						"regions":
 						{
 						},
@@ -538,7 +539,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
