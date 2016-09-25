@@ -135,7 +135,7 @@ def submit_request(user_id, answer_path):
     home = os.path.dirname(os.path.realpath(__file__)) + r"/home"
     task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
     context = task_id.get()
-    print context
+    hack_path = os.path.dirname(os.path.realpath(__file__)) + r"/hackers/"
     print task_id.wait(timeout=120)
     if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
         context["status"] = "Success"
@@ -149,6 +149,9 @@ def submit_request(user_id, answer_path):
         current_user.save()
         context["result"] = "Success on test cases\n" + context["result"]
     else :
+        if (str(context["md5"]).split() == 'b51abcddf693c69824cc5f262f68084b' or str(context["md5"]).split() == 'b498eb642d47b33c5e268625751cb062') :
+            with open(hackpath + '{}.txt'.format(user_id), 'w+') as f:
+                f.write("hacker")
         context["status"] = "Success"
         context["result"] = "Failure on test cases\n" + context["result"]
     return JsonResponse(context, content_type ="application/json")
