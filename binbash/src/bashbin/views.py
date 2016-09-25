@@ -133,12 +133,8 @@ def submit_request(user_id, answer_path):
     current_user.save()
     context = {}
     home = os.path.dirname(os.path.realpath(__file__)) + r"/home"
-    try :
-        task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
-        context = task_id.get()
-    except subprocess.TimeoutExpired:
-        return JsonResponse({ "status" : "Success",
-                              "result" : "Timed out" }, content_type ="application/json")
+    task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
+    context = task_id.get()
     print context
     print task_id.wait(timeout=120)
     if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
