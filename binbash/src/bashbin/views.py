@@ -149,6 +149,7 @@ def submit_request(user_id, answer_path):
         current_user.save()
         context["result"] = "Success on test cases\n" + context["result"]
     else :
+        print str(context["md5"]).split()
         if (str(context["md5"]).split() == 'b51abcddf693c69824cc5f262f68084b' or str(context["md5"]).split() == 'b498eb642d47b33c5e268625751cb062') :
             with open(hackpath + '{}.txt'.format(user_id), 'w+') as f:
                 f.write("hacker")
