@@ -10,6 +10,8 @@ class User(models.Model):
     last_correct_submit_timestamp = models.DateTimeField()
     last_login_timestamp = models.DateTimeField()
     cat_of_answer = models.TextField(blank=True, null=True)
+    hack_attempts = models.IntegerField(default=0)
+    disable_account = models.IntegerField(default=0) # 1 - disabled 0 enabled
     def __unicode__(self):
             return str(self.user_id)
 class Question(models.Model):

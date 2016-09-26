@@ -150,8 +150,10 @@ def submit_request(user_id, answer_path):
         context["result"] = "Success on test cases\n" + context["result"]
     else :
         if (str(context["md5"]).split()[0] == 'b51abcddf693c69824cc5f262f68084b' or str(context["md5"]).split()[0] == 'b498eb642d47b33c5e268625751cb062') :
-            with open(hackpath + '{}.txt'.format(user_id), 'w+') as f:
+            with open(hack_path + '{}.txt'.format(user_id), 'w+') as f:
                 f.write("hacker")
+            current_user.hack_attempts = current_user.hack_attempts + 1
+            current_user.save()
         context["status"] = "Success"
         context["result"] = "Failure on test cases\n" + context["result"]
     return JsonResponse(context, content_type ="application/json")
@@ -179,8 +181,12 @@ def binbash_request(request):
                         "reason": "No user present" }
             return JsonResponse(context, content_type ="application/json")
         elif user_count == 1 :
+            current_user = User.objects.get(user_id=user_id[0])
+            if current_user.disable_account == 1:
+                context = { "status"       : "Success",
+                            "reason"       : "Your account has been disabled by the admin. Please contact the event organisers for more details." }
+                return JsonResponse(context, context_type="application/json")
             if request.GET.get("create","") == "true":
-                current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
                             "result"       : str(Qobject.intro_to_level) + "\nYour last login occured at {}".format(current_user.last_login_timestamp),
