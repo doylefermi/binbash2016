@@ -26,7 +26,7 @@ def input_everything(request):
                 dir_path = question_dir_path(i,j)
                 if not Question.objects.filter(question_id=j, level_id=i).exists():
                     try:
-                        Q = Question(question_id=j,level_id=i,question_timestamp=timezone.now(), ls_cmd=" ".join(listdir_nohidden(dir_path)), cat_of_question=read_file(dir_path+"question.txt"), cat_of_file=read_file(dir_path+"file.txt"), cat_of_testcase=read_file(dir_path+"testcase.txt"), answer_md5=read_file(dir_path+".md5"))
+                        Q = Question(question_id=j,level_id=i,question_timestamp=timezone.now(), ls_cmd=" ".join(listdir_nohidden(dir_path)), cat_of_question=read_file(dir_path+"question.txt"), cat_of_file=read_file(dir_path+"file.txt"), cat_of_testcase=read_file(dir_path+"testcase.txt"), answer_md5=read_file(dir_path+".md5"), intro_to_level=read_file(dir_path+".intro.txt"))
                         Q.save()
                     except IOError as e:
                         print "IO Error level{0} question{1} {2}".format(i,j,e)
@@ -38,6 +38,7 @@ def input_everything(request):
                     Q.cat_of_file=read_file(dir_path+"file.txt")
                     Q.cat_of_testcase=read_file(dir_path+"testcase.txt")
                     Q.answer_md5=read_file(dir_path+".md5")
+                    Q.intro_to_level=read_file(dir_path+".intro.txt")
                     Q.save()
         return JsonResponse({"inputdb":"wrked"}, content_type ="application/json")
     else :
@@ -185,7 +186,7 @@ def binbash_request(request):
             if current_user.disable_account == 1:
                 context = { "status"       : "Success",
                             "reason"       : "Your account has been disabled by the admin. Please contact the event organisers for more details." }
-                return JsonResponse(context, context_type="application/json")
+                return JsonResponse(context, content_type="application/json")
             if request.GET.get("create","") == "true":
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
