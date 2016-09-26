@@ -74,7 +74,7 @@ def cat_request(request):
                     "result" : Qobject.cat_of_question }
     elif (file_name == "answer.sh"):
         contents = ""
-        if current_user.cat_of_answer != None:
+        if current_user.cat_of_answer.encode("utf-8") != "":
             contents = file_get_contents(current_user.cat_of_answer)
         context = { "status" : "Success",
                     "result" : contents }
@@ -258,7 +258,7 @@ def upload(request):
     return JsonResponse({"status": "Failure", "reason": "needs POST request"}, content_type ="application/json")
 
 def handle_uploaded_file(f, cuser):
-    path = r'/home/ec2-user/binbash2016/binbash/src/bashbin/answers/{0}_name{}_L{2}_Q{3}.sh'.format(cuser.user_id, cuser.name ,cuser.level, cuser.question)
+    path = r'/home/ec2-user/binbash2016/binbash/src/bashbin/answers/{0}_name{1}_L{2}_Q{3}.sh'.format(cuser.user_id, cuser.name ,cuser.level, cuser.question)
     with open(path, 'w+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
