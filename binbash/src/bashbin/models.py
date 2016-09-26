@@ -12,18 +12,19 @@ class User(models.Model):
     cat_of_answer = models.TextField(blank=True, null=True)
     hack_attempts = models.IntegerField(default=0)
     disable_account = models.IntegerField(default=0) # 1 - disabled 0 enabled
+    name = models.TextField()
     def __unicode__(self):
             return str(self.user_id)
 class Question(models.Model):
     question_id = models.IntegerField()
     level_id = models.IntegerField()
     question_timestamp = models.DateTimeField()
-    intro_to_level = models.TextField(blank=True, null=True)
-    intro_to_question = models.TextField(blank=True, null=True)
-    ls_cmd = models.TextField(blank=True, null=True)
-    cat_of_question = models.TextField(blank=True, null=True)
-    cat_of_file = models.TextField(blank=True, null=True)
-    cat_of_testcase = models.TextField(blank=True, null=True)
-    answer_md5 = models.TextField(blank=True, null=True)
+    intro_to_level = models.TextField(default="")
+    intro_to_question = models.TextField(default="")
+    ls_cmd = models.TextField(default="")
+    cat_of_question = models.TextField(default="")
+    cat_of_file = models.TextField(default="")
+    cat_of_testcase = models.TextField(default="")
+    answer_md5 = models.TextField(default="")
     def __unicode__(self):
         return str("level-"+str(self.level_id)+" Question-"+str(self.question_id))
