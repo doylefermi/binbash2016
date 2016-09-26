@@ -42,7 +42,7 @@ def input_everything(request):
                     Q.save()
         return JsonResponse({"inputdb":"wrked"}, content_type ="application/json")
     else :
-        return JsonResponse({"inputdb":"failed due to invalid token"}, content_type ="application/json")    
+        return JsonResponse({"inputdb":"failed due to invalid token"}, content_type ="application/json")
 def user_details(request):
     current_user = User.objects.get(user_id=request.GET.get("user_id",""))
     Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
@@ -102,6 +102,21 @@ def help_request(request):
     Note:
     Inputs to your code must be via command line arguments. The uploaded file should be in .sh format.
      """ }
+    return JsonResponse(context, content_type ="application/json")
+def rank(request):
+    user_list = User.objects.order_by('-level', '-question', 'last_correct_submit_timestamp')
+    user_id = request.GET.get("user_id","").split()[0]
+    rank = 1
+    found = False
+    for i in user_list :
+        if i.user_id == user_id:
+            found = True
+            break
+        rank = rank + 1
+    if found :
+        context = { "rank" : rank }
+    else :
+        context = { "rank" : 0 }
     return JsonResponse(context, content_type ="application/json")
 
 def scoreboard_request(request):

@@ -19,6 +19,7 @@ import bashbin.views
 
 urlpatterns = [
     url(r'^nimda/', admin.site.urls), #admin reversed
+    url(r'^rank/',bashbin.views.rank),
     url(r'^request/$',bashbin.views.binbash_request),
     url(r'^filldb/$',bashbin.views.input_everything),
     url(r'^$',bashbin.views.start_page)
