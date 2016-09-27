@@ -6,7 +6,7 @@ import os
 from bashbin.tasks import docker_run
 from celery.result import AsyncResult
 import subprocess32 as subprocess
-
+from tabulate import tabulate
 def question_dir_path(level_no,question_no):
     return os.path.dirname(os.path.realpath(__file__)) + r"/Bash/Level{0}/Question{1}/".format(level_no,question_no)
 def read_file(path):
@@ -47,7 +47,7 @@ def input_everything(request):
 def user_details(request):
     current_user = User.objects.get(user_id=request.GET.get("user_id",""))
     Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
-    a = "\nYour last login occured at {}.\n".format(current_user.last_login_timestamp)
+    a = "Welcome {0}.\nYour last login occured at {1}.\n".format(current_user.name, current_user.last_login_timestamp)
     context = { "status"       : "Success",
                 "result"       : str(a) + "You are currently in level {0} question {1}".format(current_user.level, current_user.question)}
     return JsonResponse(context, content_type ="application/json")
@@ -161,20 +161,20 @@ def scoreboard_request(request):
     context =  { "status"       : "Success",
                  "result count" : len(user_list) }
     user_details = { }
-    user_details[0] = ["name", "level_no", "question_no", "last submitted correct answers timestamp"]
+    user_details[0] = ["RANK", "NAME", "LEVEL", "QUESTION"]
+    valuelist = []
     j = 1
-    header = """NAME\t\tLEVEL\t\tQUESTION\t\tLAST CORRECT ANSWER TIME\n\n"""
-    context["result"] = header
     for i in user_list:
         if i.disable_account == 1:
             i.name = i.name + " (removed)"
             i.question = 0
             i.level = 0
-        user_details[j] = [i.name, i.level, i.question, i.last_correct_submit_timestamp]
-        user_details_str = """{0}\t\t{1}\t\t{2}\t\t{3}\n""".format(i.name, i.level, i.question, i.last_correct_submit_timestamp)
-        context["result"] += user_details_str
+        user_details[j] = [j, i.name, i.level, i.question]
+        valuelist.append(user_details[j])
         j = j + 1
     context["result_json"] = user_details
+    string_rank = tabulate(valuelist, user_details[0], tablefmt="grid")
+    context["result"] = string_rank
     return JsonResponse(context, content_type ="application/json")
 
 def submit_request(user_id, answer_path):
