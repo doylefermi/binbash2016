@@ -32,7 +32,7 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 				shutil.rmtree(f)
 		except Exception as e:
 			print e
-			
+
 	cases = open(testcases).readlines()
 	final_cases =[]
 
@@ -63,7 +63,7 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	start_container[-1] = start_container[-1].strip()
 	subprocess.check_output(start_container)
 
-	print filepath +"   " + dest
+	# print filepath +"   " + dest
 	shutil.copyfile(filepath, dest+'/user.sh')
 
 	if ''.join(final_cases).endswith(".txt"):
@@ -81,7 +81,7 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	# print (run_container)
 
 
-	return run(command,5)
+	return run(command,12)
 	# return "out"
 	# try:
 	# 	container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT, timeout=15)
