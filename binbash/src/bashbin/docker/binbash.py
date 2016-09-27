@@ -18,7 +18,7 @@ def run(cmd, timeout_sec):
 	timer.cancel()
 
 	if timeout["value"]:
-		return "Timedout. Warning!!! You will be reported to the admin"
+		return "Timedout. Warning!!! You will be reported to the admin."
 	else:
 		return  stdout+stderr
 
