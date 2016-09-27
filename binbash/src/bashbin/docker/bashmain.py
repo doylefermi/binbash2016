@@ -24,14 +24,14 @@ def check_code(filepath, filetxt_path, testcases, users_dir):
 
 		if i == 0 :
 			testcase1res = user_out
-			data['result'] = "Testcase input: " + str(test_cases_file.read()) + "\nYour output: " + user_out.encode('utf-8')
+			data['result'] = "Testcase input: \n" + str(test_cases_file.read()) + "\n\nYour output: \n" + user_out.encode('utf-8')
 			i = i + 1
 		# print md5_user
 		# data['expected_output'] = original_out
 
 		if "Out of memory" in user_out:
 			md5_final = "Out of memory noob _!_ @doylefermi"
-			data['result'] = "Testcase input: " + str(test_cases_file.read()) + "\nYour output: Out of memory. Warning!!! You will be reported to the admin"
+			data['result'] = "Testcase input: \n" + str(test_cases_file.read()) + "\n\nYour output: \nOut of memory. Warning!!! You will be reported to the admin."
 			break
 
 		if md5_user == "e6172b72cffb8ad775dba1c18fd2ae01":
