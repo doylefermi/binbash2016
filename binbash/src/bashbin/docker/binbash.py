@@ -3,6 +3,7 @@ import shlex
 import os
 import shutil
 from threading import Timer
+import glob
 
 def kill_proc(proc, timeout):
 	timeout["value"] = True
@@ -22,6 +23,16 @@ def run(cmd, timeout_sec):
 		return  stdout+stderr
 
 def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
+	files = glob.glob(users_dir+"/*")
+	for f in files:
+		try:
+			if os.path.isfile(f):
+				os.remove(f)
+			elif os.path.isdir(f):
+				shutil.rmtree(f)
+		except Exception as e:
+			print e
+			
 	cases = open(testcases).readlines()
 	final_cases =[]
 
@@ -30,10 +41,10 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 
 	# remove the folder test & empty the home dir
 
-
+	file_path=""
 	for the_file in os.listdir(users_dir):
 		file_path = os.path.join(users_dir, the_file)
-		print file_path
+		# print file_path
 
 	try:
 		if os.path.isfile(file_path):
@@ -52,6 +63,7 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	start_container[-1] = start_container[-1].strip()
 	subprocess.check_output(start_container)
 
+	print filepath +"   " + dest
 	shutil.copyfile(filepath, dest+'/user.sh')
 
 	if ''.join(final_cases).endswith(".txt"):
@@ -67,6 +79,7 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	#= ['docker','exec',container_id.strip(),'/bin/bash','user.sh']
 	# run_container+=final_cases
 	# print (run_container)
+
 
 	return run(command,5)
 	# return "out"
