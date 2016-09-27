@@ -143,6 +143,8 @@ def rank(request):
     found = False
     for i in user_list :
         if i.user_id == user_id:
+            if i.disable_account == 1:
+                rank = 0 
             found = True
             break
         rank = rank + 1
@@ -164,6 +166,10 @@ def scoreboard_request(request):
     header = """NAME\t\tLEVEL\t\tQUESTION\t\tLAST CORRECT ANSWER TIME\n\n"""
     context["result"] = header
     for i in user_list:
+        if i.disable_account == 1:
+            i.name = i.name + " (removed)"
+            i.question = 0
+            i.level = 0
         user_details[j] = [i.name, i.level, i.question, i.last_correct_submit_timestamp]
         user_details_str = """{0}\t\t{1}\t\t{2}\t\t{3}\n""".format(i.name, i.level, i.question, i.last_correct_submit_timestamp)
         context["result"] += user_details_str

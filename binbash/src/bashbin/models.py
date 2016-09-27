@@ -14,7 +14,7 @@ class User(models.Model):
     disable_account = models.IntegerField(default=0) # 1 - disabled 0 enabled
     name = models.TextField()
     def __unicode__(self):
-            return str(self.user_id)
+            return str(self.name + str(self.hack_attempts))
 class Question(models.Model):
     question_id = models.IntegerField()
     level_id = models.IntegerField()
