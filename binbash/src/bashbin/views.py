@@ -280,7 +280,7 @@ def binbash_request(request):
     return func(request)
 
 def start_page(request):
-    return render(request,"index.html",{})
+    return JsonResponse({"status":"Success"}, content_type ="application/json")
 
 def upload(request):
     print request.FILES
