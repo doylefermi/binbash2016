@@ -91,13 +91,45 @@ def cat_request(request):
 
 def help_request(request):
     context = { "status": "Success",
-                "result": """BIN BASH HELP\n The commands available here includes :
-    1. ls - list all the files in the current directory.
-    2. cat filename - displays contents of the file named "filename".
-    3. submit - opens up an upload window to submit code and runs the code.
-    4. scoreboard - displays top current users in the scoreboard.
-    Note:
-    Inputs to your code must be via command line arguments. The uploaded file should be in .sh format.
+                "result": """BIN BASH HELP\n Commands available in terminal
+ls - list all the files in the current directory.    
+cat filename - displays contents of the file named "filename".  
+submit - opens up an upload window to submit code and runs the code. 
+scoreboard - displays top current users in the scoreboard.
+
+Commands possible in answer script
+ls, cat, pwd, ping, curl, bc, echo, printf, grep, awk, sed, tr, head, tail, sort, uniq
+
+Rules
+This is strictly an individual online event.                    
+Registration is required for participation and there should be no duplicate accounts.   
+Attacking or flooding the server or writing malicious scripts will lead to disqualification.
+Participants suspected of using unfair means WILL BE disqualified without notice.
+The decisions and judgement of the coordinators will be final.
+Rules are subject to change at any point in time.
+
+Note:
+
+Input to your code must always be command line.
+The uploaded file must be in .sh format.
+We will run your code against multiple test cases.
+
+How to write answer scripts
+    Sample Code(uploaded file): sample.sh
+    
+    #!/bin/bash
+    echo "Input arguments from command line: $1 $2 $3" 
+
+What happens when you submit
+On submission the answer file is run as ./sample.sh with each line from testcase.txt as a command line argument.
+
+Example: 
+
+Testcase.txt :
+1
+2
+3
+
      """ }
     return JsonResponse(context, content_type ="application/json")
 def rank(request):
