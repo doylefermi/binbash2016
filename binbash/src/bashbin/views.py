@@ -92,17 +92,17 @@ def cat_request(request):
 def help_request(request):
     context = { "status": "Success",
                 "result": """BIN BASH HELP\n Commands available in terminal
-ls - list all the files in the current directory.    
-cat filename - displays contents of the file named "filename".  
-submit - opens up an upload window to submit code and runs the code. 
+ls - list all the files in the current directory.
+cat filename - displays contents of the file named "filename".
+submit - opens up an upload window to submit code and runs the code.
 scoreboard - displays top current users in the scoreboard.
 
 Commands possible in answer script
 ls, cat, pwd, ping, curl, bc, echo, printf, grep, awk, sed, tr, head, tail, sort, uniq
 
 Rules
-This is strictly an individual online event.                    
-Registration is required for participation and there should be no duplicate accounts.   
+This is strictly an individual online event.
+Registration is required for participation and there should be no duplicate accounts.
 Attacking or flooding the server or writing malicious scripts will lead to disqualification.
 Participants suspected of using unfair means WILL BE disqualified without notice.
 The decisions and judgement of the coordinators will be final.
@@ -116,14 +116,14 @@ We will run your code against multiple test cases.
 
 How to write answer scripts
     Sample Code(uploaded file): sample.sh
-    
+
     #!/bin/bash
-    echo "Input arguments from command line: $1 $2 $3" 
+    echo "Input arguments from command line: $1 $2 $3"
 
 What happens when you submit
 On submission the answer file is run as ./sample.sh with each line from testcase.txt as a command line argument.
 
-Example: 
+Example:
 
 Testcase.txt :
 1
@@ -144,7 +144,7 @@ def rank(request):
     for i in user_list :
         if i.user_id == user_id:
             if i.disable_account == 1:
-                rank = 0 
+                rank = 0
             found = True
             break
         rank = rank + 1
@@ -203,7 +203,7 @@ def submit_request(user_id, answer_path):
             current_user.question = current_user.question + 1
         current_user.cat_of_answer = ""
         current_user.save()
-        context["result"] = "Success on test cases\n" + str(context["result"]).replace("52.39.25.19", "IP")
+        context["result"] = "Success on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
     else :
         if (str(context["md5"]).split()[0] == 'b51abcddf693c69824cc5f262f68084b' or str(context["md5"]).split()[0] == 'b498eb642d47b33c5e268625751cb062') :
             with open(hack_path + '{}.txt'.format(current_user.name), 'w+') as f:
@@ -211,7 +211,7 @@ def submit_request(user_id, answer_path):
             current_user.hack_attempts = current_user.hack_attempts + 1
             current_user.save()
         context["status"] = "Success"
-        context["result"] = "Failure on test cases\n" + str(context["result"]).replace("52.39.25.19", "IP")
+        context["result"] = "Failure on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
 
     return JsonResponse(context, content_type ="application/json")
 
@@ -220,8 +220,8 @@ def binbash_request(request):
     if user_id[0] == 0 :
         context = { "status": "Failure",
                     "reason": "contact admin" }
-        return JsonResponse(context, content_type ="application/json")  
-    print request.GET.get("name","")            
+        return JsonResponse(context, content_type ="application/json")
+    print request.GET.get("name","")
     name = request.GET.get("name","")
     if len(user_id) == 0:
         context = { "status": "Failure",
