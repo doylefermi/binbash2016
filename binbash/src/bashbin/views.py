@@ -9,11 +9,13 @@ import subprocess32 as subprocess
 from tabulate import tabulate
 import requests
 def telegram_bot(msg):
-    url = "https://api.telegram.org/bot270974521:AAHuzi4Iz1642lyCJoJKiAmIokiRl0hOu6k/sendMessage"
-    data = { "chat_id": "@binbash2016",
-             "text"   : msg }
-    response = requests.post(url,params=data)
-    print response
+    try:
+        url = "https://api.telegram.org/bot270974521:AAHuzi4Iz1642lyCJoJKiAmIokiRl0hOu6k/sendMessage"
+        data = { "chat_id": "@binbash2016",
+                 "text"   : msg }
+        response = requests.post(url,params=data)
+    except:
+        print "tele-error"
 def question_dir_path(level_no,question_no):
     return os.path.dirname(os.path.realpath(__file__)) + r"/Bash/Level{0}/Question{1}/".format(level_no,question_no)
 def read_file(path):
