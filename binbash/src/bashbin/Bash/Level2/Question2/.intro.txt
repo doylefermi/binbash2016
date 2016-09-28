@@ -1,6 +1,6 @@
 Welcome to Level 2, 
 It seems that there has been an abduction. The abduction of some prominent developers has
-some connection to this new “closed programming world”.
+some connection to this new 'closed programming world'.
 The abduction happened at the annual open source conference. A document was recovered from
 the scene.
  

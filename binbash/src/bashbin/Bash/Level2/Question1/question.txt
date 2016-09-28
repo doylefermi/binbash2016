@@ -1,4 +1,4 @@
-The document is a piece of paper torn out of a magazine article. There appears to be some hidden data in it. To recover it you must write a bash script that collects all capital letters in the text and prints it out. The document can be found in the file ‘file.txt’. Remember the script must work for any text. Assume that the input file is available as a command line argument. 
+The document is a piece of paper torn out of a magazine article. There appears to be some hidden data in it. To recover it you must write a bash script that collects all capital letters in the text and prints it out. The document can be found in the file 'file.txt'. Remember the script must work for any text. Assume that the input file is available as a command line argument. 
     Example:
         INPUT : All Good Things Come To An End.
         OUTPUT : AGTCTAE
