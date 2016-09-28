@@ -215,7 +215,7 @@ def submit_request(user_id, answer_path):
             current_user.hack_attempts = current_user.hack_attempts + 1
             current_user.save()
         context["status"] = "Success"
-        context["result"] = "Failure on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
+        context["result"] = "Failure occured on one of the test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
         context["info"] = ""
     return JsonResponse(context, content_type ="application/json")
 
