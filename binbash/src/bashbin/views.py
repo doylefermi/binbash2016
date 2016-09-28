@@ -204,6 +204,10 @@ def submit_request(user_id, answer_path):
         current_user.cat_of_answer = ""
         current_user.save()
         context["result"] = "Success on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
+        context["info"] = "You have successfully cleared this round."
+        if  current_user.question == 1 :
+            Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
+            context["info"] +=  Qobject.intro_to_level
     else :
         if (str(context["md5"]).split()[0] == 'b51abcddf693c69824cc5f262f68084b' or str(context["md5"]).split()[0] == 'b498eb642d47b33c5e268625751cb062') :
             with open(hack_path + '{}.txt'.format(current_user.name), 'w+') as f:
@@ -212,7 +216,7 @@ def submit_request(user_id, answer_path):
             current_user.save()
         context["status"] = "Success"
         context["result"] = "Failure on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
-
+        context["info"] = ""
     return JsonResponse(context, content_type ="application/json")
 
 def binbash_request(request):
