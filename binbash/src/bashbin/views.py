@@ -216,7 +216,7 @@ def binbash_request(request):
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : str(Qobject.intro_to_level) + "\nYour last login occured at {}".format(current_user.last_login_timestamp),
+                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nYour last login occured at {}".format(current_user.last_login_timestamp),
                             "level"        : current_user.level,
                             "question"     : current_user.question }
                 return JsonResponse(context, content_type ="application/json")
@@ -232,7 +232,7 @@ def binbash_request(request):
             if request.GET.get("create","") == "true":
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : str(Qobject.intro_to_level) + "\nYour last login occured at {}".format(current_user.last_login_timestamp) }
+                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nYour last login occured at {}".format(current_user.last_login_timestamp) }
                 current_user.last_login_timestamp=timezone.now()
                 current_user.save()
                 return JsonResponse(context, content_type ="application/json")
