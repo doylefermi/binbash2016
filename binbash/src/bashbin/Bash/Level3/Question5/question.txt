@@ -1,2 +1,8 @@
-Questions closed.
-Will be available shortly.
+Your task is to convert the newly obtained 32 bit string into an IP address.
+Also find in which class the IP belongs to. Append the class to the IP address as shown below.
+The input data is present in the file 'file.txt'. Assume that the input file is entered via command line.
+	Example:
+        	INPUT:   10000010111000110100101001001010
+        	OUTPUT:  130.227.74.74
+			 Class B
+

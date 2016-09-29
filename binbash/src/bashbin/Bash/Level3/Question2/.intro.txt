@@ -1,10 +1,5 @@
-Welcome to #!/bin/bash
-
-The world of programming is in a standstill. All open source programming languages have been closed. 
-
-Well... All except bash. An organization has dismantled the entire GNU community and forced them to enforce proprietary ownership.
- 
-Your task is to help free the open source languages using bash scripting.
-Enter the command 'help' to understand the rules of the game. 
-First, let's test your basic bash scripting.
-Press any key to begin...
+Welcome to Level 3,
+Were you able to decode the riddle?
+Well, analysts have confirmed that it leads to the wikipedia page of Conscience.
+Looks like it's time to get on the web.
+Brush up your networking skills and begin...

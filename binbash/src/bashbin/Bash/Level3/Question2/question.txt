@@ -1,2 +1,16 @@
-Questions closed.
-Will be available shortly.
+Going across the hyperlinks obtained we have come across a familiar word 'Artificial Intelligence'. Remember that we came across an article on AI previously. Your task now is write a script to print out the domain names of the all the domains that occur in a google search of 'Artificial Intelligence'. Each search result will provide some domains and you are required to get the list of domain names in the sorted order(Consider alphanumeric charaters only). The search result is present in the following URL. Assume that the URL is entered as a command line argument. The script must work with any google search. Note that google domain should not be present.
+    URL : https://ptpb.pw/ckxT.html
+    Example:
+        INPUT: 	https://ptpb.pw/qEAO.htm
+        OUTPUT:
+		en.wikipedia.org
+		nptel.ac.in
+		study.com
+		www.journals.elsevier.com
+		www.sciencedirect.com
+		www.studytonight.com
+		www.techopedia.com
+		www.tutorialspoint.com
+		www.udacity.com
+		www.webopedia.com
+
