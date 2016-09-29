@@ -203,6 +203,7 @@ def submit_request(user_id, answer_path):
         context["status"] = "Success"
         context["result"] = "Failure occured on one of the test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
         context["info"] = ""
+    telegram_bot("User: " + current_user.name +"\n" +str(context))
     return JsonResponse(context, content_type ="application/json")
 
 def binbash_request(request):
@@ -221,7 +222,7 @@ def binbash_request(request):
         user_count = len(User.objects.filter(user_id=user_id[0]))
         if user_count == 0:
             if request.GET.get("create","") == "true":
-                telegram_bot(name+" logged in")
+                # telegram_bot(name+" logged in")
                 User(user_id = str(user_id[0]), level=1, question=1, name=name, last_login_timestamp=timezone.now(),last_correct_submit_timestamp=timezone.now()).save()
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
@@ -240,7 +241,7 @@ def binbash_request(request):
                             "result"       : "Your account has been disabled by the admin. Please contact the event organisers for more details." }
                 return JsonResponse(context, content_type="application/json")
             if request.GET.get("create","") == "true":
-                telegram_bot(name+" logged in")
+                # telegram_bot(name+" logged in")
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
                             "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nYour last login occured at {}".format(current_user.last_login_timestamp) }
