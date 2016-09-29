@@ -191,6 +191,7 @@ def submit_request(user_id, answer_path):
         current_user.save()
         context["result"] = "Success on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
         context["info"] = "You have successfully cleared this round.\n\n"
+        telegram_bot( current_user.name +" cleared L" + str(current_user.level) + "Q" + str(current_user.question))
         if  current_user.question == 1 :
             Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
             context["info"] +=  Qobject.intro_to_level
