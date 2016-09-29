@@ -8,6 +8,8 @@ from celery.result import AsyncResult
 import subprocess32 as subprocess
 from tabulate import tabulate
 import requests
+import subprocess
+from multiprocessing import Process
 def telegram_bot(msg):
     try:
         url = "https://api.telegram.org/bot270974521:AAHuzi4Iz1642lyCJoJKiAmIokiRl0hOu6k/sendMessage"
@@ -16,15 +18,28 @@ def telegram_bot(msg):
         response = requests.post(url,params=data)
     except:
         print "tele-error"
+
+def telegram_bot_file(files):
+    try:
+        cmd = '''curl -F document=@{0} https://api.telegram.org/bot270974521:AAHuzi4Iz1642lyCJoJKiAmIokiRl0hOu6k/sendDocument?chat_id=@binbash2016'''.format(files)
+        args = cmd.split()
+        process = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = process.communicate()
+    except:
+        print "tele-file-error"
+
 def question_dir_path(level_no,question_no):
     return os.path.dirname(os.path.realpath(__file__)) + r"/Bash/Level{0}/Question{1}/".format(level_no,question_no)
+
 def read_file(path):
     with open(path, 'r') as content_file:
         content = content_file.read()
     return content
+
 def file_get_contents(filename):
     with open(filename) as f:
         return f.read()
+
 def listdir_nohidden(path):
     for f in os.listdir(path):
         if not f.startswith('.'):
@@ -53,6 +68,7 @@ def input_everything(request):
         return JsonResponse({"inputdb":"worked"}, content_type ="application/json")
     else :
         return JsonResponse({"inputdb":"failed due to invalid token"}, content_type ="application/json")
+
 def user_details(request):
     current_user = User.objects.get(user_id=request.GET.get("user_id",""))
     Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
@@ -105,7 +121,7 @@ def help_request(request):
     cat filename - displays contents of the file named "filename".
     submit - opens up an upload window to submit code and runs the code.
     scoreboard - displays top current users in the scoreboard.
-
+    whoami - displays your level and question info
 How to play:
     https://goo.gl/AWT8uL
 
@@ -118,6 +134,7 @@ What happens when you submit:
     On submission the answer file is run as ./answer.sh with each line from testcase.txt as a command line argument.
      """ }
     return JsonResponse(context, content_type ="application/json")
+
 def rank(request):
     user_list = User.objects.order_by('-level', '-question', 'last_correct_submit_timestamp')
     user_id = request.GET.get("user_id","").split()[0]
@@ -164,6 +181,8 @@ def scoreboard_request(request):
     return JsonResponse(context, content_type ="application/json")
 
 def submit_request(user_id, answer_path):
+    p = Process(target=telegram_bot_file, args=(answer_path,))
+    p.start()
     if answer_path == "":
         return JsonResponse({ "status": "Failure",
                               "reason": "Provide path to answer file" }, content_type ="application/json")
@@ -191,7 +210,7 @@ def submit_request(user_id, answer_path):
         current_user.save()
         context["result"] = "Success on test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
         context["info"] = "You have successfully cleared this round.\n\n"
-        telegram_bot( current_user.name +" cleared L" + str(current_user.level) + "Q" + str(current_user.question))
+        telegram_bot( current_user.name +" cleared to L" + str(current_user.level) + "Q" + str(current_user.question))
         if  current_user.question == 1 :
             Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
             context["info"] +=  Qobject.intro_to_level
@@ -204,11 +223,16 @@ def submit_request(user_id, answer_path):
         context["status"] = "Success"
         context["result"] = "Failure occured on one of the test cases\n" + str(context["result"]).replace("52.39.25.19", "Nigga you thought you can find me? _!_")
         context["info"] = ""
-    telegram_bot("User: " + current_user.name +"\n" +str(context))
+    telegram_bot("User: " + current_user.name +" Level: " + str(current_user.level) +" Question: " + str(current_user.question)+"\n" +str(context))
     return JsonResponse(context, content_type ="application/json")
 
 def binbash_request(request):
     user_id = request.GET.get("user_id","").split()
+    cmd = request.GET.get("cmd","").split()
+    if len(cmd) == 0:
+        context = { "status": "Success",
+                    "result": "" }
+        return JsonResponse(context, content_type ="application/json")
     if user_id[0] == 0 :
         context = { "status": "Failure",
                     "reason": "contact admin" }
@@ -239,6 +263,7 @@ def binbash_request(request):
             current_user = User.objects.get(user_id=user_id[0])
             if current_user.disable_account == 1:
                 context = { "status"       : "Success",
+                            "info"         : "",
                             "result"       : "Your account has been disabled by the admin. Please contact the event organisers for more details." }
                 return JsonResponse(context, content_type="application/json")
             if request.GET.get("create","") == "true":
@@ -253,11 +278,6 @@ def binbash_request(request):
             context = { "status": "Failure",
                         "reason": "2 users with same id found. Contact admin." }
             return JsonResponse(context, content_type ="application/json")
-    cmd = request.GET.get("cmd","").split()
-    if len(cmd) == 0:
-        context = { "status": "Success",
-                    "result": "" }
-        return JsonResponse(context, content_type ="application/json")
     switch = {
         "ls": ls_request,
         "cat": cat_request,
@@ -291,7 +311,7 @@ def upload(request):
     return JsonResponse({"status": "Failure", "reason": "needs POST request"}, content_type ="application/json")
 
 def handle_uploaded_file(f, cuser):
-    path = r'/home/ec2-user/binbash2016/binbash/src/bashbin/answers/{0}_name{1}_L{2}_Q{3}.sh'.format(cuser.user_id, cuser.name ,cuser.level, cuser.question)
+    path = r'/home/ec2-user/binbash2016/binbash/src/bashbin/answers/{0}_{1}_L{2}_Q{3}.sh'.format(cuser.user_id, str(cuser.name).replace (" ", "_") ,cuser.level, cuser.question)
     with open(path, 'w+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
