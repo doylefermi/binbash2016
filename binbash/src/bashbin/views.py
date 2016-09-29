@@ -228,11 +228,6 @@ def submit_request(user_id, answer_path):
 
 def binbash_request(request):
     user_id = request.GET.get("user_id","").split()
-    cmd = request.GET.get("cmd","").split()
-    if len(cmd) == 0:
-        context = { "status": "Success",
-                    "result": "" }
-        return JsonResponse(context, content_type ="application/json")
     if user_id[0] == 0 :
         context = { "status": "Failure",
                     "reason": "contact admin" }
@@ -278,6 +273,11 @@ def binbash_request(request):
             context = { "status": "Failure",
                         "reason": "2 users with same id found. Contact admin." }
             return JsonResponse(context, content_type ="application/json")
+    cmd = request.GET.get("cmd","").split()
+    if len(cmd) == 0:
+        context = { "status": "Success",
+                    "result": "" }
+        return JsonResponse(context, content_type ="application/json")
     switch = {
         "ls": ls_request,
         "cat": cat_request,
