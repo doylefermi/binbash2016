@@ -247,7 +247,7 @@ def binbash_request(request):
                 current_user = User.objects.get(user_id=user_id[0])
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nWARNING: Your answer may fail testcases if newline gets appended at the end of output. So be sure to try your code with and without newline.\nYour last login occured at {}".format(current_user.last_login_timestamp),
+                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nWARNING: Your answer may fail testcases if newline gets appended at the end of output.\n So be sure to try your code with and without newline.\nYour last login occured at {}".format(current_user.last_login_timestamp),
                             "level"        : current_user.level,
                             "question"     : current_user.question }
                 return JsonResponse(context, content_type ="application/json")
@@ -265,7 +265,7 @@ def binbash_request(request):
                 # telegram_bot(name+" logged in")
                 Qobject = Question.objects.get(question_id=current_user.question, level_id=current_user.level)
                 context = { "status"       : "Success",
-                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nWARNING: Your answer may fail testcases if newline gets appended at the end of output. So be sure to try your code with and without newline.\nYour last login occured at {}".format(current_user.last_login_timestamp) }
+                            "result"       : str(Qobject.intro_to_level) + "How to play:\n    https://goo.gl/AWT8uL\nWARNING: Your answer may fail testcases if newline gets appended at the end of output.\n So be sure to try your code with and without newline.\nYour last login occured at {}".format(current_user.last_login_timestamp) }
                 current_user.last_login_timestamp=timezone.now()
                 current_user.save()
                 return JsonResponse(context, content_type ="application/json")
