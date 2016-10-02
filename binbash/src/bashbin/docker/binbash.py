@@ -66,22 +66,27 @@ def run_code(filepath, filetxt_path, testcases, container_id, users_dir):
 	# print filepath +"   " + dest
 	shutil.copyfile(filepath, dest+'/user.sh')
 
-	if ''.join(final_cases).endswith(".txt"):
-		shutil.copyfile(filetxt_path, dest+'/'+''.join(final_cases))
-		final_cases = ''.join(final_cases).split()
+	for add_file in final_cases:
+		if ''.join(add_file).endswith(".txt"):
+			# print filetxt_path+ ":" +dest+'/'+''.join(add_file)
+			shutil.copyfile(filetxt_path, dest+'/'+''.join(add_file))
+			# final_cases = ''.join(final_cases).split()
+
 	# print final_cases
 	# copyto_container = ['docker','cp',filepath,container_id.strip()+':/user.sh']
 	# subprocess.check_output(copyto_container)
 	# copyto_container = ['docker','cp',filetxt_path,container_id.strip()+':/file.txt']
 	# subprocess.check_output(copyto_container)
-	command = "docker exec "+container_id.strip()+" /bin/bash user.sh "+"'"+"' '".join(final_cases)+"'"
-	# print command
+	command = "docker exec "+container_id.strip()+" /bin/bash user.sh"
+	for add_file in final_cases:
+		command = command +" '"+add_file+"'"
+	print command
 	#= ['docker','exec',container_id.strip(),'/bin/bash','user.sh']
 	# run_container+=final_cases
 	# print (run_container)
 
 
-	return run(command,12)
+	return run(command,20)
 	# return "out"
 	# try:
 	# 	container_out = subprocess.check_output(run_container,stderr=subprocess.STDOUT, timeout=15)

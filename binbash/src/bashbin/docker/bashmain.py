@@ -40,7 +40,7 @@ def check_code(filepath, filetxt_path, testcases, users_dir):
 
 
 
-		# print user_out.encode('utf-8') + " " + md5_user
+		print user_out.encode('utf-8') + "----------------------" + md5_user
 		md5_final = md5_final + md5_user
 		# print md5_final
 
