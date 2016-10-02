@@ -1,2 +1,6 @@
-Questions closed.
-Will be available shortly.
+We have obtained the IP addresses of the previously obtained domains. These 10 IP addresses may be our next clue. Your task is to convert the IP addresses into binary values, remove all extra characters and convert them into a string of 1s and 0s. The IP addresses are stored in the file 'file.txt'. Assume that the input file is available as a command line argument.
+	Example:
+        INPUT: 	91.198.174.192
+		14.139.160.71
+        OUTPUT:
+        	0101101111000110101011101100000000001110100010111010000010101011

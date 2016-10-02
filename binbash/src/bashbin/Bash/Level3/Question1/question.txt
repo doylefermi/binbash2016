@@ -1,2 +1,25 @@
-Questions closed.
-Will be available shortly.
+Your task is to access the wikipedia page of 'Conscience' at https://en.wikipedia.org/wiki/Conscience and retrieve all hyperlinks present in the html paragraph tags of the page and print them out. Take note that you are only required to get all valid links in the contents of page (citations, references are not required). Refer following example for output format. The script must work with any wikipedia page. Assume that the link of the page is entered as a command line argument.
+	Example:
+    	INPUT: 	https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer)
+    	OUTPUT: 
+        	https://en.wikipedia.org/wiki/Computer_programmer
+		https://en.wikipedia.org/wiki/Free_software
+		https://en.wikipedia.org/wiki/GNU
+		https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+		https://en.wikipedia.org/wiki/Operating_system_shell
+		https://en.wikipedia.org/wiki/Online_banking
+		https://en.wikipedia.org/wiki/Richard_Stallman
+		https://en.wikipedia.org/wiki/Free_Software_Foundation
+		https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+		https://en.wikipedia.org/wiki/Makeinfo
+		https://en.wikipedia.org/wiki/Info_(Unix)
+		https://en.wikipedia.org/wiki/Finger_protocol
+		https://en.wikipedia.org/wiki/Echo_(command)
+		https://en.wikipedia.org/wiki/Readline
+		https://en.wikipedia.org/wiki/GNU_Emacs
+		https://en.wikipedia.org/wiki/Wikipedia:Citation_needed
+		https://en.wikipedia.org/wiki/Emacs
+		https://en.wikipedia.org/wiki/Apple_II_series
+		https://en.wikipedia.org/wiki/Donal_Fox
+		https://en.wikipedia.org/wiki/Rich_Uncle_Pennybags
+

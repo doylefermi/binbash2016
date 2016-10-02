@@ -1,2 +1,5 @@
-Questions closed.
-Will be available shortly.
+You have obtained a series of 1s and 0s. To get meaningful data out of this heap, retrieve every 10th bit in this series and and bring them together to form a string of 32 bits. The input data is present in the file 'file.txt'. Assume that the input file is entered via command line.
+	Example:
+		INPUT: 0101101111000110101011101100000000001110100010111010000010101011
+		OUTPUT: 100000
+
