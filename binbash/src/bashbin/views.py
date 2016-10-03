@@ -198,6 +198,20 @@ def submit_request(user_id, answer_path):
     task_id = docker_run.delay( answer_path, extra_file_txt, testcase, home)
     context = task_id.get()
     hack_path = os.path.dirname(os.path.realpath(__file__)) + r"/hackers/"
+    print "1001077228632" in str(context["result"])
+    if "1001077228632" in str(context["result"]):
+        context["status"] = "Success"
+        current_usrrect_submit_timestamp = timezone.now()
+        if (current_user.question == 5):
+            current_user.level = current_user.level + 1
+            current_user.question = 1
+        current_user.cat_of_answer = ""
+        current_user.save()
+        context["result"] = "You have completed binbash. You will be contacted by admin.\n\n"
+        context["info"] = ""
+        telegram_bot( current_user.name +" cleared to L" + str(current_user.level) + "Q" + str(current_user.question))
+        telegram_bot("User: " + current_user.name +" Level: " + str(current_user.level) +" Question: " + str(current_user.question)+"\n" +str(context))
+        return JsonResponse(context, content_type ="application/json")
     if (str(context["md5"]).split() == str(Qobject.answer_md5).split()) :
         context["status"] = "Success"
         current_user.last_correct_submit_timestamp = timezone.now()

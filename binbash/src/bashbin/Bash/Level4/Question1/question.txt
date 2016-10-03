@@ -1,2 +1,11 @@
-Questions closed.
-Will be available shortly.
+The text files containing some call logs are available at 'https://www.dropbox.com/sh/zsaljtt9blqy597/AADHNehVw_g5cWwrLc4QTjuna?dl=0'. The details are stored across multiple text files. Your task is to download all files(number not specified) available at 'https://www.dropbox.com/sh/zsaljtt9blqy597/AADHNehVw_g5cWwrLc4QTjuna?dl=0' and merge them into a single text file. The script must run for any folder publically shared in Dropbox. Assume that the URL is entered as a command line argument. 
+Hint : Remember to supress stderr.
+    Example:
+        INPUT: https://www.dropbox.com/sh/zsaljtt9blqy597/AADHNehVw_g5cWwrLc4QTjuna?dl=0
+        OUTPUT: 
+        	*Contents of file log1*
+        	\n
+        	*Contents of file log2*
+        	\n
+        	*Contents of file log3*
+		\n

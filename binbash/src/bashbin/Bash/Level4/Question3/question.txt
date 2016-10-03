@@ -1,2 +1,23 @@
-Questions closed.
-Will be available shortly.
+Let’s try to consolidate the call log details. Your task is to get the top 5 numbers who have had calls with the given number for the maximum duration. The call log of the number is available at the file 'file.txt'. Assume that the file is available as a command line argument. Your script must work for the call log file of any number. Repeated calls to or from the same number must be added together to obtain the total duration. The resulting list must be in the decreasing order of call durations. 
+    Example:
+        INPUT: 
+        CALL LOG OF 9946789045
+	8864257356 INCOMING 2:21
+	9584624578 INCOMING 2:22
+	9584624578 OUTGOING 12:45
+	9584624578 OUTGOING 15:08
+	9072389045 INCOMING 16:30
+	8995674264 INCOMING 18:01
+	9584624578 INCOMING 27:04
+	9072389045 OUTGOING 35:48
+	7846999546 OUTGOING 45:00
+	9584624578 OUTGOING 58:47
+
+        OUTPUT: 
+	9584624578 01:56:06
+	9072389045 00:52:18
+	7846999546 00:45:00
+	8995674264 00:18:01
+	8864257356 00:02:21\n
+
+

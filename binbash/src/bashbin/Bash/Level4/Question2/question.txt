@@ -1,2 +1,27 @@
-Questions closed.
-Will be available shortly.
+Looks like we need to view call histories of a few key numbers. The file 'file.txt' contains all the call logs which were retrieved earlier. Your task is to get all calls from and to any specific number in the following format. Assume that the file is accepted as the first command line argument and the number as the second command line argument. The log has to be sorted by the duration of call(ascending).
+    Example:
+        INPUT: 
+		9946789045 9584624578 15:08
+		9946789045 9584624578 12:45
+		8864257356 9946789045 2:21
+		9495747774 8995674264 12:00
+		8995674264 9584624578 26:02
+		9584624578 7849556458 7:58
+		9584624578 8995674264 4:10
+		9072389045 9946789045 16:30
+		9986548245 7846999546 1:54
+		7849556458 9584624578 7:58
+		9584624578 8995674264 6:12
+		9584624578 9946789045 2:22
+		7849556458 89956742647 6:48
+		9584824578 9584624578 4:10
+
+		No. for which call log required: 9946789045
+	OUTPUT:
+
+		CALL LOG OF 9946789045
+        	8864257356 INCOMING 2:21
+		9584624578 INCOMING 2:22
+		9584624578 OUTGOING 12:45
+		9584624578 OUTGOING 15:08
+		9072389045 INCOMING 16:30\n

@@ -1,2 +1,11 @@
-Questions closed.
-Will be available shortly.
+The numbers you found were registered to places across the globe. The file 'file.txt' contains the 5 addresses. Your task is to find the latitude and longitude of each of these places and sum them up to get a new latitude and longitude. Next you must find the address corresponding to the newly obtained coordinates and print it out. Your script must work for any input file containing 5 addresses. Assume that the file is available as a command line argument.
+Hint : You may use Google Map API to get the coordinates and corresponding address.
+Example:
+    INPUT:
+        Athens, Kentrikos Tomeas Athinon, Greece
+	Boksburg, Gauteng, South Africa
+	Canary Wharf, London, United Kingdom
+	Don Torcuato, Buenos Aires Province, Argentina
+	Laxmipur Pottangi Range, Kanaka, Odisha
+    OUTPUT:
+        Aktogay District, Karagandy Province, Kazakhstan, 100000\n
