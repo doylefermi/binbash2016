@@ -1,4 +1,6 @@
-# BINBASH #
+![binbash2016 GUI](screen.png)
+
+# BINBASH API#
 ----
   Perform GET and POST requests to play `excel2016/binbash`
 
